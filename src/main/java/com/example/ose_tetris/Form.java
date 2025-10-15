@@ -12,7 +12,7 @@ public class Form {
     private String name;
     public int form = 1;
 
-    public Form(Rectangle a, Rectangle b, Rectangle c, Rectangle d){
+    public Form(Rectangle a, Rectangle b, Rectangle c, Rectangle d) {
         this.a = a;
         this.b = b;
         this.c = c;
@@ -48,22 +48,24 @@ public class Form {
             case "i":
                 color = Color.SANDYBROWN;
                 break;
-        }
 
+        }
         this.a.setFill(color);
         this.b.setFill(color);
         this.c.setFill(color);
         this.d.setFill(color);
     }
 
+
     public String getName() {
         return name;
     }
 
+
     public void changeForm() {
-        if (form != 4){
+        if (form != 4) {
             form++;
-        } else{
+        } else {
             form = 1;
         }
     }

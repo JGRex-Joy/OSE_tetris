@@ -1,22 +1,24 @@
 package com.example.ose_tetris;
 
-import javafx.scene.shape.*;
+
+import javafx.scene.shape.Rectangle;
 
 public class Controller {
+    // Getting the numbers and the MESH from Tetris
     public static final int MOVE = Tetris.MOVE;
     public static final int SIZE = Tetris.SIZE;
-    public static int XMAX = Tetris.SIZE;
-    public static int YMAX = Tetris.SIZE;
-    public static int [][] MESH = Tetris.MESH;
+    public static int XMAX = Tetris.XMAX;
+    public static int YMAX = Tetris.YMAX;
+    public static int[][] MESH = Tetris.MESH;
 
-    public static void MoveRight(Form form){
+    public static void MoveRight(Form form) {
         if (form.a.getX() + MOVE <= XMAX - SIZE && form.b.getX() + MOVE <= XMAX - SIZE
-            && form.c.getX() + MOVE <= XMAX - SIZE && form.d.getX() + MOVE <= XMAX - SIZE){
-            int movea = MESH[((int) form.a.getX()) / SIZE + 1][((int) form.a.getY()) / SIZE];
-            int moveb = MESH[((int) form.b.getX()) / SIZE + 1][((int) form.b.getY()) / SIZE];
-            int movec = MESH[((int) form.c.getX()) / SIZE + 1][((int) form.c.getY()) / SIZE];
-            int moved = MESH[((int) form.d.getX()) / SIZE + 1][((int) form.d.getY()) / SIZE];
-            if (movea == 0 && movea == moveb && moveb == movec && movec == moved){
+                && form.c.getX() + MOVE <= XMAX - SIZE && form.d.getX() + MOVE <= XMAX - SIZE) {
+            int movea = MESH[((int) form.a.getX() / SIZE) + 1][((int) form.a.getY() / SIZE)];
+            int moveb = MESH[((int) form.b.getX() / SIZE) + 1][((int) form.b.getY() / SIZE)];
+            int movec = MESH[((int) form.c.getX() / SIZE) + 1][((int) form.c.getY() / SIZE)];
+            int moved = MESH[((int) form.d.getX() / SIZE) + 1][((int) form.d.getY() / SIZE)];
+            if (movea == 0 && movea == moveb && moveb == movec && movec == moved) {
                 form.a.setX(form.a.getX() + MOVE);
                 form.b.setX(form.b.getX() + MOVE);
                 form.c.setX(form.c.getX() + MOVE);
@@ -25,14 +27,14 @@ public class Controller {
         }
     }
 
-    public static void MoveLeft(Form form){
-        if (form.a.getX() - MOVE >= 0 && form.b.getX() - MOVE >= 0
-                && form.c.getX() - MOVE >= 0 && form.d.getX() - MOVE >= 0){
-            int movea = MESH[((int) form.a.getX()) / SIZE + 1][((int) form.a.getY()) / SIZE];
-            int moveb = MESH[((int) form.b.getX()) / SIZE + 1][((int) form.b.getY()) / SIZE];
-            int movec = MESH[((int) form.c.getX()) / SIZE + 1][((int) form.c.getY()) / SIZE];
-            int moved = MESH[((int) form.d.getX()) / SIZE + 1][((int) form.d.getY()) / SIZE];
-            if (movea == 0 && movea == moveb && moveb == movec && movec == moved){
+    public static void MoveLeft(Form form) {
+        if (form.a.getX() - MOVE >= 0 && form.b.getX() - MOVE >= 0 && form.c.getX() - MOVE >= 0
+                && form.d.getX() - MOVE >= 0) {
+            int movea = MESH[((int) form.a.getX() / SIZE) - 1][((int) form.a.getY() / SIZE)];
+            int moveb = MESH[((int) form.b.getX() / SIZE) - 1][((int) form.b.getY() / SIZE)];
+            int movec = MESH[((int) form.c.getX() / SIZE) - 1][((int) form.c.getY() / SIZE)];
+            int moved = MESH[((int) form.d.getX() / SIZE) - 1][((int) form.d.getY() / SIZE)];
+            if (movea == 0 && movea == moveb && moveb == movec && movec == moved) {
                 form.a.setX(form.a.getX() - MOVE);
                 form.b.setX(form.b.getX() - MOVE);
                 form.c.setX(form.c.getX() - MOVE);
