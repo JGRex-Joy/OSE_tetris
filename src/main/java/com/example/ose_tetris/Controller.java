@@ -4,7 +4,6 @@ package com.example.ose_tetris;
 import javafx.scene.shape.Rectangle;
 
 public class Controller {
-    // Getting the numbers and the MESH from Tetris
     public static final int MOVE = Tetris.MOVE;
     public static final int SIZE = Tetris.SIZE;
     public static int XMAX = Tetris.XMAX;
